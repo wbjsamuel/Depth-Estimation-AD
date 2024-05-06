@@ -1,7 +1,7 @@
 # Depth Estimation for AD 
 ![image](https://github.com/wbjsamuel/Depth-Estimation-AD/assets/38983954/ed2c9727-ea03-466a-98dd-89a814ab0969)
 
-> We reproduce the results of Depth-Anything via HP Workstation
+> We reproduce the results of Depth-Anything via HP Workstation in Autonomous Driving scenarios.
 ![image](https://github.com/wbjsamuel/Depth-Estimation-AD/assets/38983954/8b3c54c8-1b38-41b4-9b6f-d5eb3547d4d1)
 
 ## Performance
@@ -24,13 +24,13 @@ We highlight the **best** and *second best* results in **bold** and *italic* res
 
 We utilize three models of varying scales for robust relative depth estimation:
 
-| Model | Params | Inference Time on V100 (ms) | A100 | RTX4090 ([TensorRT](https://github.com/spacewalk01/depth-anything-tensorrt)) |
+| Model | Params | Inference Time on V100 (ms) | A100 | A5000 |
 |:-|-:|:-:|:-:|:-:|
-| Depth-Anything-Small | 24.8M | 12 | 8 | 3 |
-| Depth-Anything-Base | 97.5M | 13 | 9 | 6 |
-| Depth-Anything-Large | 335.3M | 20 | 13 | 12 |
+| Depth-Anything-Small | 24.8M | 12 | 8 | 15 |
+| Depth-Anything-Base | 97.5M | 13 | 9 | 16 |
+| Depth-Anything-Large | 335.3M | 20 | 13 | 23 |
 
-Note that the V100 and A100 inference time (*without TensorRT*) is computed by excluding the pre-processing and post-processing stages, whereas the last column RTX4090 (*with TensorRT*) is computed by including these two stages (please refer to [Depth-Anything-TensorRT](https://github.com/spacewalk01/depth-anything-tensorrt)).
+Note that the V100 and A100 inference time is computed on computing clusters, whereas the last column A5000 is computed on HP Workstation. The inference time allows local machines to instantly reflect the depth module's performance for better development.
 
 The pre-trained models can be easily loaded by:
 ```python
