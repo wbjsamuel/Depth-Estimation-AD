@@ -26,10 +26,10 @@ css = """
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = DepthAnything.from_pretrained('LiheYoung/depth_anything_vitl14').to(DEVICE).eval()
 
-title = "# Depth Anything"
-description = """Official demo for **Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data**.
+title = "# Depth Estimation for Autonomous Driving"
+description = """Reproduce demo for **Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data** in autonomous driving scenarios.
 
-Please refer to our [paper](https://arxiv.org/abs/2401.10891), [project page](https://depth-anything.github.io), or [github](https://github.com/LiheYoung/Depth-Anything) for more details."""
+Please refer to the [paper](https://arxiv.org/abs/2401.10891), [project page](https://depth-anything.github.io), or [github](https://github.com/LiheYoung/Depth-Anything) for more details."""
 
 transform = Compose([
         Resize(
